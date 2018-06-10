@@ -1,0 +1,1 @@
+#Teste com django para criação de um blog
