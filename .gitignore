@@ -3,3 +3,4 @@
 *pyc
 .idea/
 *.sqlite3
+.pytest_cache/
