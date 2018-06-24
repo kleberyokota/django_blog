@@ -4,3 +4,4 @@
 .idea/
 *.sqlite3
 .pytest_cache/
+staticfiles/
