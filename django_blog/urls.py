@@ -20,5 +20,6 @@ import django_blog.core.views
 
 urlpatterns = [
     path('', django_blog.core.views.home, name= 'post_list'),
+    path('post/<pk>/', django_blog.core.views.post_detail, name='post_detail'),
     path('admin/', admin.site.urls),
 ]
