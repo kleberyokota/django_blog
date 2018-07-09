@@ -1,6 +1,8 @@
-from django.test import TestCase
+from django.test import TestCase, Client
+
 
 _dj_testcase = TestCase()
+dj_client = Client()
 
 dj_assert_contains = _dj_testcase.assertContains
 dj_assert_not_contains = _dj_testcase.assertNotContains

@@ -1,6 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
-
+from django.conf import settings
 
 class PostManager(models.Manager):
     def create_post(self,title, text, author):
@@ -26,7 +27,7 @@ class PostManager(models.Manager):
         return post
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
