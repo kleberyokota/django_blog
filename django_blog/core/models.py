@@ -1,15 +1,15 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
-from django.conf import settings
+
 
 class PostManager(models.Manager):
-    def create_post(self,title, text, author):
+    def create_post(self, title, text, author, created_date):
         post = Post(
-                title=title,
-                text=text,
-                author=author
-            )
+            title=title,
+            text=text,
+            author=author
+        )
 
         if post.full_clean():
             return self.create(
@@ -25,6 +25,7 @@ class PostManager(models.Manager):
         )
 
         return post
+
 
 class Post(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
