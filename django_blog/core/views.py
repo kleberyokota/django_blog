@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
+
 from django_blog.core.forms import PostForm
 from django_blog.core.models import Post
 
@@ -28,8 +29,8 @@ def post_new(request):
     return render(request, 'post_new.html', {'form': form})
 
 
-def post_edit(request,pk):
-    post = get_object_or_404(Post,pk=pk)
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
         form = PostForm(request.POST, instance=post)
         if form.is_valid():

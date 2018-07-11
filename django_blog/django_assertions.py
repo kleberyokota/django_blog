@@ -1,6 +1,5 @@
 from django.test import TestCase, Client
 
-
 _dj_testcase = TestCase()
 dj_client = Client()
 
