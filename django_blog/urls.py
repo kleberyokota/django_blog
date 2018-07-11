@@ -20,7 +20,8 @@ import django_blog.core.views
 
 urlpatterns = [
     path('', django_blog.core.views.home, name='post_list'),
-    re_path('post/(?P<pk>\d+)/', django_blog.core.views.post_detail, name='post_detail'),
+    re_path('^post/(?P<pk>\d+)/$', django_blog.core.views.post_detail, name='post_detail'),
+    re_path('^post/(?P<pk>\d+)/edit/$', django_blog.core.views.post_edit, name='post_edit'),
     path('post/new/', django_blog.core.views.post_new, name='post_new'),
     path('admin/', admin.site.urls),
 ]
