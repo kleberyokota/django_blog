@@ -4,7 +4,9 @@ python:
 global:
  -DEBUG=True
 install:
- - pip install -q -r requirements-dev.txt
+ - pip install -q -r requirements-dev.txt codecov
 script:
  - flake8
  - pytest django_blog --cov=django_blog/core/test
+after_success:
+ - codecov
